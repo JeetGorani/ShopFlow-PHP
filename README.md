@@ -1,27 +1,91 @@
-# ShopFlow Core — PHP + MySQL edition
+# 🛍️ ShopFlow PHP
 
-Open-source clothing inventory and order dashboard built for XAMPP. No Maven, Java runtime, paid API, Composer, or external service is required.
+### Clothing Inventory & Order Management System
 
-## Features
-- Dashboard totals: product-size variants, units in stock, low-stock variants, orders, and sales total.
-- Inventory by clothing size, product search, add product, and restock.
-- Orders with customer details, multiple line items, automatic stock deduction, and printable invoices.
-- MySQL storage using PDO prepared statements and database transactions.
-- Responsive dashboard adapted from the original ShopFlow Core UI.
+ShopFlow is a web-based inventory management application designed to help clothing businesses manage products, stock levels, orders, and invoices through a simple interface.
 
-## Run with XAMPP (Windows)
-1. Start **Apache** and **MySQL** in the XAMPP Control Panel.
-2. Copy this entire `ShopFlow-PHP` folder into `C:\xampp\htdocs\`.
-3. Open `http://localhost/phpmyadmin`.
-4. Choose **Import**, select `database/schema.sql`, and click **Import** / **Go**. This creates the `shopflow` database and adds sample products.
-5. If your MySQL root password is not blank, edit `DB_PASS` in `config.php`.
-6. Open `http://localhost/ShopFlow-PHP/` in your browser.
+## ✨ Features
 
-## Important notes
-- Product name + size must be unique. Use **Restock** to add stock to an existing size.
-- Orders save their item names, sizes, quantities, and prices as an invoice snapshot. Stock deduction and order creation run in one database transaction.
-- Use the invoice window's **Print / Save as PDF** button and choose “Save as PDF” in the browser print dialog.
-- This is a local MVP, not ready for public internet deployment. Before hosting it publicly, add authentication/roles, CSRF protection, rate limiting, backups, and deployment hardening.
+- 📦 **Inventory Management** — Add and manage clothing products.
+- 👕 **Product Variants** — Organize products by size and colour.
+- 📊 **Stock Tracking** — Monitor available stock and identify low-stock items.
+- 🛒 **Order Management** — Create customer orders and track sales.
+- 🧾 **Invoice Generation** — View invoices for recorded orders.
+- 🗂️ **Category Management** — Organize products by clothing category, including custom categories.
+- 💾 **Database Integration** — Store application data using MySQL.
+- 🖥️ **Local Development** — Run the application locally using XAMPP.
 
-## Stack
-PHP 8+ (PDO MySQL), MySQL/MariaDB, HTML, CSS, JavaScript. MIT License.
+## 🧰 Tech Stack
+
+| Technology | Purpose |
+|---|---|
+| PHP | Backend logic and API |
+| MySQL | Database |
+| JavaScript | Interactive frontend |
+| HTML | Page structure |
+| CSS | Styling |
+| XAMPP | Local PHP and MySQL environment |
+| Git & GitHub | Version control and source hosting |
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Windows computer
+- XAMPP with Apache and MySQL
+- Git (optional, for cloning the repository)
+
+### Installation
+
+1. Clone or download this repository into your XAMPP `htdocs` directory.
+2. Start **Apache** and **MySQL** from the XAMPP Control Panel.
+3. Create a MySQL database for ShopFlow using phpMyAdmin.
+4. Configure your local database connection in `config.php`.
+5. Import the database schema and sample data if provided by the project.
+6. Open the application in your browser using your local XAMPP URL.
+
+> **Note:** The database schema file and exact database configuration depend on the files included with your local project. Never use real production credentials in a public repository.
+
+## 📁 Project Structure
+
+```text
+ShopFlow-PHP/
+├── assets/
+│   ├── app.js
+│   └── styles.css
+├── .gitignore
+├── .htaccess
+├── api.php
+├── config.php
+├── index.php
+├── LICENSE
+└── README.md
+```
+
+`config.php` contains local configuration and should not be committed if it includes credentials.
+
+## 🎯 Project Goals
+
+ShopFlow was built as a practical project to explore web development, database integration, inventory workflows, and order management.
+
+## 🔮 Future Improvements
+
+Potential improvements include:
+
+- Sales reports and analytics
+- Product search and filtering
+- Exportable inventory reports
+- Online deployment with secure production configuration
+- Automated testing
+
+These are planned enhancements, not claims about currently implemented features.
+
+## 👨‍💻 Author
+
+**Jeet Gorani**
+
+GitHub: [@JeetGorani](https://github.com/JeetGorani)
+
+## 📄 License
+
+See the [LICENSE](LICENSE) file for license details.
