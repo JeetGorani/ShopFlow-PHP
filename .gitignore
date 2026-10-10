@@ -1,6 +1,14 @@
-/vendor/
-/.env
+
+# Secrets and private configuration
 .env
+/.env
+/config.php
+/mail_config.php
+
+# Dependencies
+/vendor/
+
+# Logs and system files
 *.log
 .DS_Store
 Thumbs.db
@@ -8,14 +16,5 @@ Thumbs.db
 # Local database backups and exports
 *.sql
 *.sql.zip
-database-backup/
-backups/
-# Private configuration
-/config.php
-/.env
-
-# Dependencies and local data
-/vendor/
+/database-backup/
 /backups/
-*.sql
-*.sql.zip
