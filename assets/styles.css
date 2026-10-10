@@ -855,7 +855,7 @@ form select:focus {
     .order-line {
         grid-template-columns: minmax(0, 1fr) 72px 28px
     }
-
+}
 .variant-picker {
   border: 1px solid #e5e7eb;
   border-radius: 12px;
@@ -951,6 +951,76 @@ form select:focus {
     padding-bottom: 0;
   }
 }
-    
 
+.logout-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 11px 16px;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #dc2626;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.logout-btn:hover {
+  background: #fef2f2;
+  border-color: #fecaca;
+}
+
+.user-greeting {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 14px;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    background: #ffffff;
+    color: #172033;
+    font-size: 14px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+@media (max-width: 700px) {
+    .user-greeting {
+        font-size: 12px;
+        padding: 8px 10px;
+    }
+}
+
+.profile-wrapper {
+    position: relative;
+}
+
+.profile-menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    z-index: 99999;
+    width: 220px;
+    padding: 8px;
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    box-shadow: 0 12px 30px #17203318;
+}
+
+.profile-menu[hidden] {
+    display: none !important;
+}
+
+.profile-menu a {
+    display: block;
+    padding: 12px;
+    color: #dc2626;
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+.profile-menu a:hover {
+    background: #fef2f2;
 }

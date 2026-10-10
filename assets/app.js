@@ -405,3 +405,43 @@ $("#orders-table").addEventListener("click", async e => {
 });
 async function boot() { try { await refresh(); } catch (err) { toast(`Could not connect to backend: ${err.message}`, true); } }
 boot();
+
+const profileToggle = document.getElementById('profile-toggle');
+const profileMenu = document.getElementById('profile-menu');
+
+if (profileToggle && profileMenu) {
+    profileToggle.addEventListener('click', () => {
+        const isOpen = !profileMenu.hidden;
+
+        profileMenu.hidden = isOpen;
+        profileToggle.setAttribute('aria-expanded', String(!isOpen));
+    });
+
+    document.addEventListener('click', (event) => {
+        if (!event.target.closest('.profile-wrapper')) {
+            profileMenu.hidden = true;
+            profileToggle.setAttribute('aria-expanded', 'false');
+        }
+    });
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+            profileMenu.hidden = true;
+            profileToggle.setAttribute('aria-expanded', 'false');
+        }
+    });
+}
+
+document.addEventListener('click', function (event) {
+    const logoutLink = event.target.closest('a[href="logout.php"]');
+
+    if (!logoutLink) return;
+
+    const confirmed = window.confirm(
+        'Are you sure you want to log out?'
+    );
+
+    if (!confirmed) {
+        event.preventDefault();
+    }
+});

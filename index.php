@@ -1,3 +1,11 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['user_id'])) {
+    header('Location: login.php');
+    exit;
+}
+?>
 <!doctype html>
 <html lang="en">
 
@@ -28,8 +36,33 @@
           <p class="eyebrow">CLOTHING OPERATIONS</p>
           <h1 id="page-title">Overview</h1>
         </div>
-        <div class="top-actions"><span class="live-pill"><i></i> System online</span><button class="primary"
-            id="quick-add">＋ Add product</button></div>
+        
+
+<div class="top-actions">
+  <span class="live-pill"><i></i> System online</span>
+
+  <div class="profile-wrapper">
+    <button type="button"
+            class="user-greeting"
+            id="profile-toggle"
+            aria-expanded="false">
+      👤 Hi, <?= htmlspecialchars($_SESSION['user_name'] ?? 'User', ENT_QUOTES, 'UTF-8') ?> ⌄
+    </button>
+
+    <div class="profile-menu" id="profile-menu" hidden>
+      <div class="profile-menu-heading">
+        <strong>
+          <?= htmlspecialchars($_SESSION['user_name'] ?? 'User', ENT_QUOTES, 'UTF-8') ?>
+        </strong>
+        <small>ShopFlow Account</small>
+      </div>
+      <a href="logout.php">Logout ↗</a>
+    </div>
+  </div>
+
+  <button class="primary" id="quick-add">＋ Add product</button>
+</div>
+
       </header>
       <section id="overview-view" class="view">
         <div class="welcome">
